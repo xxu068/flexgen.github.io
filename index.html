@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="description"
+        content="Lift3D: use NeRF to create training data."> -->
+  <meta name="keywords" content="NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlexGen: Flexible Multi-View Generation from Text and Image Inputs</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/UST.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+  
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FlexGen: Flexible Multi-View Generation from Text and Image Inputs</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com.sg/citations?user=lrgPuBUAAAAJ&hl=zh-CN">Xinli Xu</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://g3956.github.io/wenhangge.github.io/">Wenhang Ge</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ri-snP0AAAAJ&hl=zh-CN&oi=ao">Jiantao Lin</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a>Jiawei Feng</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Lie Xu</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a>HanFeng Zhao</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a >Shunsi Zhang</a><sup>3</sup>,</span>
+            
+            <span class="author-block">
+              <a href="https://www.yingcong.me/">Ying-Cong Chen</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST(GZ),</span>
+            <span class="author-block"><sup>2</sup>HKUST</span> 
+            <span class="author-block"><sup>3</sup>Quwan</span> 
+            <p><span class="author-block">* Equal contribution</span></p>
+            <p><span class="author-block">arxiv preprint</span></p>
+          </div>
+
+           <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.01351"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://xxu068.github.io/flexgen.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Demo coming soon.</span>
+                </a>
+              </span> -->
+
+
+              <!-- Hugging Face Space (LCM). -->
+              <span class="link-block">
+                <a href="https://xxu068.github.io/flexgen.github.io/" target="_blank" rel="noopener noreferrer"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" style="font-size:23px">
+                      &#129303;
+                  </span>
+                  <span>HF Demo(coming Soon)</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+
+              <!-- <span class="link-block">
+                <a href="https://github.com/Len-Li/Adv3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+
+            </div> 
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <img src="./imgs/teaser.png" class="center" width="1000px">
+    <div class="columns is-centered has-text-centered">
+      <p style="max-width: 1000px;">
+      FlexGen is a flexible framework designed to generate high-quality, consistent  multi-view images conditioned on a single-view image,
+      or a text prompt, or both. Our method allows editing of unseen regions and modification of material properties through user-defined text.
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<section class="flex">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          In this work, we introduce FlexGen, a flexible framework designed to generate controllable and consistent multi-view images, 
+          conditioned on a single-view image, or a text prompt, or both. FlexGen tackles the challenges of controllable multi-view synthesis 
+          through additional conditioning on 3D-aware text annotations. We utilize the strong reasoning capabilities of GPT-4V to generate
+          3D-aware text annotations. By analyzing four orthogonal views of an object arranged as tiled multi-view images, GPT-4V can produce 
+          text annotations that include 3D-aware information with spatial relationship. By integrating the control signal with proposed adaptive 
+          dual-control module, our model can generate multi-view images that correspond to the specified text. FlexGen supports multiple 
+          controllable capabilities, allowing users to modify text prompts to generate reasonable and corresponding unseen parts. Additionally, 
+          users can influence attributes such as appearance and material properties, including metallic and roughness. Extensive experiments 
+          demonstrate that our approach offers enhanced multiple controllability, marking a significant advancement over existing multi-view diffusion models. 
+          This work has substantial implications for fields requiring rapid and flexible 3D content creation, including game development, animation, and virtual reality.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<br>
+
+
+<section class="framework"> 
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Method Overview</h2>
+    <img src="./imgs/framework.png" class="center" width="1000px">
+    <div class="content has-text-justified">
+      <p style="max-width: 1000px; margin: 0 auto;"> 
+        Overview of the framework. FlexGen is a flexible framework to generate controllable
+        and consistent multi-view images, conditioned on a single-view image, or a text prompt, or both.
+        The system incorporates a 3D-aware annotation method using GPT-4V and an adaptive dual-control
+        module that integrates both a reference input image and text prompts for precise joint control. The
+        condition switcher enhances flexibility, enabling the model to generate multi-view images based on
+        image input, text input, or a combination of both modalities.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-4">3D-aware caption generation pipeline</h2>
+    <img src="./imgs/caption.png" class="center" width="1000px">
+    <div class="content has-text-justified">
+      <p style="max-width: 1000px; margin: 0 auto;"> 
+      A 3D object is rendered into four orthogonal multi-view images (front, left, back, right) in a 2×2 grid layout. Using GPT-4V, the agent generates
+      both global and local descriptions. The global description captures the overall attributes of the object
+      and the 3D spatial relationships between its components, while local features detail specific aspects
+      such as color, posture, and texture, thereby enriching the dataset with rich semantic annotations.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Text to multi-view</h2>
+    <img src="./imgs/text-to-multi.png" class="center" width="1000px">
+    <div class="columns is-centered has-text-centered">
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Effect of the caption</h2>
+    <img src="./imgs/ablation_prompt.png" class="center" width="1000px">
+    <div class="columns is-centered has-text-centered">
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">More cases</h2>
+    <img src="./imgs/more_cases.png" class="center" width="1000px">
+    <div class="columns is-centered has-text-centered">
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{li2023adv3d, 
+	author = {Xinli Xu and Wenhang Ge and Jiantao Lin and Ying-Cong Chen}, 
+	title = {FlexGen: Flexible Multi-View Generation from Text and Image Inputs}, 
+        journal={arXiv preprint},
+	year = {2024}, 
+}</code></pre>
+  </div>
+</section>
+
+  
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align:center">
+            Web source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+              href="https://nerfies.github.io/">Nerfies website</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
